@@ -31,6 +31,8 @@ spec:
             name: dashboard
           - containerPort: 10001
             name: client
+        imagePullSecrets:
+        - name: regcred
   workerGroupSpecs:
     # the pod replicas in this group typed worker
     - replicas: 1
@@ -52,3 +54,5 @@ spec:
                 requests:
                   cpu: 1
                   memory: 1G
+          imagePullSecrets:
+            - name: regcred
